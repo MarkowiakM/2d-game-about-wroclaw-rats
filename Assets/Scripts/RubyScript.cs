@@ -13,6 +13,7 @@ public class RubyScript : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
+    public CoinManager cm;
     private bool isTouchingGround;
 
     private Animator playerAnimation;
@@ -50,5 +51,14 @@ public class RubyScript : MonoBehaviour
     {
         playerAnimation.SetFloat("Speed", Mathf.Abs(player.velocity.x));
         playerAnimation.SetBool("OnGround", isTouchingGround);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("RubbyCheese"))
+        {
+            Destroy(other.gameObject);
+            cm.coinCount++;
+        }
     }
 }
