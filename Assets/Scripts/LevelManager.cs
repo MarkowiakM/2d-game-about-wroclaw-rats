@@ -34,6 +34,7 @@ public class LevelManager : MonoBehaviour
         }
         else if(rubyDoorOpened && rubyDoorOpened && !isLevelCompleted)
         {
+            isLevelCompleted = true;
             StartCoroutine(DelayedLevelCompleted(1.5f));
         }
         
