@@ -6,7 +6,9 @@ public class GameStateManager : MonoBehaviour
 {
     public static int doorOpenedCount;
 
-    // tu dodac muzyke tez
+    public AudioSource musicSource;
+
+    public AudioClip background;
 
     void Awake()
     {
@@ -15,7 +17,8 @@ public class GameStateManager : MonoBehaviour
 
     void Start()
     {
-        
+        musicSource.clip = background;
+        musicSource.Play();
     }
 
 
