@@ -66,8 +66,7 @@ public class RufusScript : MonoBehaviour
         }
         if(other.gameObject.CompareTag("RubyWater"))
         {
-            playerAnimation.SetBool("Death", true);
-            Destroy(gameObject, 1f);
+            playerAnimation.SetTrigger("Death");
             isDead = true;
         }
     }

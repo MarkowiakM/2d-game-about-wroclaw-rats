@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 1277151376298886262}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7fcdbadcb01935444b6e18ef207376e5, type: 2}
+  m_Controller: {fileID: 22100000, guid: 7fc222b572bab954188f34dcd0717b73, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   jumpSpeed: 10
+  isDead: 0
   groundCheck: {fileID: 1121789191427654167}
   groundCheckRadius: 0.67
   groundLayer:

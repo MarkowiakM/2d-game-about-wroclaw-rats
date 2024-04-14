@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 8846410221870018479}
   m_Layer: 0
   m_Name: RubyTrutka4Tiles
-  m_TagString: Untagged
+  m_TagString: RubyWater
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
