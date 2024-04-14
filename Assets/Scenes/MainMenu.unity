@@ -535,7 +535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adbb7b0afe323bf4da78a462b0b8ccc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorOpenedCount: 0
 --- !u!114 &577818223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,10 +943,14 @@ PrefabInstance:
     - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 577818223}
     - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoToLevelsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NavigationManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

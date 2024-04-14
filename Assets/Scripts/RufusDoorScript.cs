@@ -6,6 +6,7 @@ public class RufusDoorScript : MonoBehaviour
 {
 
     private Animator doorAnimation;
+    public LevelManager lm;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class RufusDoorScript : MonoBehaviour
         {
             doorAnimation.SetBool("isTouching", true);
             GameStateManager.doorOpenedCount += 1;
+            lm.rufusDoorOpened = true;
         }
     }
 }
