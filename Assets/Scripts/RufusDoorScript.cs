@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RubyDoorScript : MonoBehaviour
+public class RufusDoorScript : MonoBehaviour
 {
 
     private Animator doorAnimation;
@@ -18,7 +18,7 @@ public class RubyDoorScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Ruby"))
+        if (other.gameObject.CompareTag("Rufus"))
         {
             doorAnimation.SetBool("isTouching", true);
             GameStateManager.doorOpenedCount += 1;

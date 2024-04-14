@@ -59,15 +59,18 @@ public class RubyScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("RubbyCheese"))
+        if (!isDead)
         {
-            Destroy(other.gameObject);
-            cm.coinCount++;
-        }
-        if (other.gameObject.CompareTag("RufusWater"))
-        {
-            playerAnimation.SetTrigger("Death");
-            isDead = true;
+            if (other.gameObject.CompareTag("RubbyCheese"))
+            {
+                Destroy(other.gameObject);
+                cm.coinCount++;
+            }
+            if (other.gameObject.CompareTag("RufusWater"))
+            {
+                playerAnimation.SetTrigger("Death");
+                isDead = true;
+            }
         }
     }
 }
