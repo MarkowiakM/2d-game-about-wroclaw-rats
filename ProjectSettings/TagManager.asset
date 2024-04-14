@@ -10,6 +10,8 @@ TagManager:
   - RufusDoor
   - Ruby
   - Rufus
+  - RufusWater
+  - RubyWater
   layers:
   - Default
   - TransparentFX
