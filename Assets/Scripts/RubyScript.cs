@@ -9,12 +9,11 @@ public class RubyScript : MonoBehaviour
     public float jumpSpeed = 7f;
     private float direction = 0f;
     private Rigidbody2D player;
-    public bool isDead = false;
 
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
-    public CoinManager cm;
+    public LevelManager lm;
     private bool isTouchingGround;
 
     private Animator playerAnimation;
@@ -27,7 +26,7 @@ public class RubyScript : MonoBehaviour
 
     void Update()
     {
-        if(!isDead)
+        if(!lm.isRubyDead)
         {
             isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
             direction = Input.GetAxis("Horizontal 1");
@@ -59,15 +58,18 @@ public class RubyScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("RubbyCheese"))
+        if (!lm.isRubyDead)
         {
-            Destroy(other.gameObject);
-            cm.coinCount++;
-        }
-        if (other.gameObject.CompareTag("RufusWater"))
-        {
-            playerAnimation.SetTrigger("Death");
-            isDead = true;
+            if (other.gameObject.CompareTag("RubbyCheese"))
+            {
+                Destroy(other.gameObject);
+                lm.rubyCoins++;
+            }
+            if (other.gameObject.CompareTag("RufusWater"))
+            {
+                playerAnimation.SetTrigger("Death");
+                lm.isRubyDead = true;
+            }
         }
     }
 }

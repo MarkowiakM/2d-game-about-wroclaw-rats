@@ -9,12 +9,11 @@ public class RufusScript : MonoBehaviour
     public float jumpSpeed = 7f;
     private float direction = 0f;
     private Rigidbody2D player;
-    public bool isDead = false;
 
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
-    public CoinManager cm;
+    public LevelManager lm;
     private bool isTouchingGround;
 
     private Animator playerAnimation;
@@ -27,7 +26,7 @@ public class RufusScript : MonoBehaviour
 
     void Update()
     {
-        if(!isDead)
+        if(!lm.isRufusDead)
         {
             isTouchingGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
             direction = Input.GetAxis("Horizontal 2");
@@ -59,15 +58,18 @@ public class RufusScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("RufusCheese"))
+        if (!lm.isRufusDead)
         {
-            Destroy(other.gameObject);
-            cm.coinCount++;
-        }
-        if(other.gameObject.CompareTag("RubyWater"))
-        {
-            playerAnimation.SetTrigger("Death");
-            isDead = true;
+            if (other.gameObject.CompareTag("RufusCheese"))
+            {
+                Destroy(other.gameObject);
+                lm.rufusCoins++;
+            }
+            if (other.gameObject.CompareTag("RubyWater"))
+            {
+                playerAnimation.SetTrigger("Death");
+                lm.isRufusDead = true;
+            }
         }
     }
 }
