@@ -152,13 +152,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   jumpSpeed: 10
-  isDead: 0
   groundCheck: {fileID: 1121789191427654167}
   groundCheckRadius: 0.67
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  cm: {fileID: 0}
+  lm: {fileID: 0}
 --- !u!60 &6988342088614840398
 PolygonCollider2D:
   m_ObjectHideFlags: 0
