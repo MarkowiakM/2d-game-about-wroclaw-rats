@@ -12,6 +12,7 @@ TagManager:
   - Rufus
   - RufusWater
   - RubyWater
+  - Enemy
   layers:
   - Default
   - TransparentFX
