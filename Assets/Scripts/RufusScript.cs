@@ -65,7 +65,7 @@ public class RufusScript : MonoBehaviour
                 Destroy(other.gameObject);
                 lm.rufusCoins++;
             }
-            if (other.gameObject.CompareTag("RubyWater"))
+            if (other.gameObject.CompareTag("RubyWater") || other.gameObject.CompareTag("Enemy"))
             {
                 playerAnimation.SetTrigger("Death");
                 lm.isRufusDead = true;
