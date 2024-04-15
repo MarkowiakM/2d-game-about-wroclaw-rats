@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        
+        Time.timeScale = 1f;
     }
 
     void Update()
