@@ -16,5 +16,6 @@ public class LevelCompletedScreen : MonoBehaviour
         rubyCoinsText.text = rubyCoins.ToString();
         rufusCoinsText.text = rufusCoins.ToString();
         totalCointsText.text = (rubyCoins + rufusCoins).ToString() + " / 10";
+        Time.timeScale = 0f;
     }
 }

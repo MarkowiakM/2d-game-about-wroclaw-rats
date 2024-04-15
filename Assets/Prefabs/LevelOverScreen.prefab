@@ -104,8 +104,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8186321377717831877}
-  - {fileID: 908975015179758368}
-  - {fileID: 8042372749120541083}
+  - {fileID: 2432929553420206034}
+  - {fileID: 8094274099084568914}
   - {fileID: 3881139102647321722}
   m_Father: {fileID: 6624393268810733783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -257,6 +257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3111659695762370622}
+  - component: {fileID: 580829908746895400}
   m_Layer: 0
   m_Name: LevelOverScreen
   m_TagString: Untagged
@@ -280,6 +281,18 @@ Transform:
   - {fileID: 6624393268810733783}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &580829908746895400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6974599496833238432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d294fd9aacb7bf4b8523e7ca04a2a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8992851982212363237
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +471,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!1001 &247601164555571757
+--- !u!1001 &3328569755943126751
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -567,12 +580,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
---- !u!224 &908975015179758368 stripped
+--- !u!224 &2432929553420206034 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1149249167347972365, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
-  m_PrefabInstance: {fileID: 247601164555571757}
+  m_PrefabInstance: {fileID: 3328569755943126751}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6948714892361525398
+--- !u!1001 &9198135424221237343
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -665,32 +678,8 @@ PrefabInstance:
       value: MenuButton
       objectReference: {fileID: 0}
     - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoToLevelsMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MainMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: MainMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8666487937440050443, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
       propertyPath: m_text
@@ -701,8 +690,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
---- !u!224 &8042372749120541083 stripped
+--- !u!224 &8094274099084568914 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1149249167347972365, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
-  m_PrefabInstance: {fileID: 6948714892361525398}
+  m_PrefabInstance: {fileID: 9198135424221237343}
   m_PrefabAsset: {fileID: 0}

@@ -7,5 +7,6 @@ public class LevelOverScreen : MonoBehaviour
     public void Setup()
     {
         gameObject.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
