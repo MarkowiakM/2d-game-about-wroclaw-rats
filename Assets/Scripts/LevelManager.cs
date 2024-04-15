@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public bool rufusDoorOpened;
     private bool isLevelCompleted;
     private bool isLevelOver;
+    public float timeElapsed;
 
     public LevelCompletedScreen LevelCompletedScreen;
     public LevelOverScreen LevelOverScreen;
@@ -37,7 +38,7 @@ public class LevelManager : MonoBehaviour
             isLevelCompleted = true;
             StartCoroutine(DelayedLevelCompleted(1.5f));
         }
-        
+        timeElapsed += Time.deltaTime;
     }
 
     private IEnumerator DelayedLevelCompleted(float delay)
@@ -48,7 +49,7 @@ public class LevelManager : MonoBehaviour
 
     private void LevelCompleted()
     {
-        LevelCompletedScreen.Setup(rubyCoins, rufusCoins);
+        LevelCompletedScreen.Setup(rubyCoins, rufusCoins, timeElapsed);
     }
 
     private IEnumerator DelayedLevelOver(float delay)

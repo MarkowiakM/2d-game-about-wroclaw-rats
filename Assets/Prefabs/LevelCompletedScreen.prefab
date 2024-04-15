@@ -1157,6 +1157,7 @@ MonoBehaviour:
   rubyCoinsText: {fileID: 4209504216551425466}
   rufusCoinsText: {fileID: 99172763617600055}
   totalCointsText: {fileID: 5098610812855157343}
+  timeText: {fileID: 6736811164963396382}
 --- !u!1 &7369286822044134588
 GameObject:
   m_ObjectHideFlags: 0
