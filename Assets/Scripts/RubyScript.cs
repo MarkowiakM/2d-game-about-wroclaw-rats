@@ -65,7 +65,7 @@ public class RubyScript : MonoBehaviour
                 Destroy(other.gameObject);
                 lm.rubyCoins++;
             }
-            if (other.gameObject.CompareTag("RufusWater"))
+            if (other.gameObject.CompareTag("RufusWater") || other.gameObject.CompareTag("Enemy"))
             {
                 playerAnimation.SetTrigger("Death");
                 lm.isRubyDead = true;
