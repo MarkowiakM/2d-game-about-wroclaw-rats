@@ -7,12 +7,25 @@ public class GameStateManager : MonoBehaviour
     public static int doorOpenedCount;
 
     public AudioSource musicSource;
+    public AudioSource effectAudioSource;
 
     public AudioClip background;
+    public AudioClip cheeseBite;
+    public AudioClip gameOver;
+    public static int[] unlockedLevels;
+    public static GameStateManager instance;
 
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+            unlockedLevels = new int[]{1, 1, 1, 1, 1, 1};
+        } else
+        {
+            
+        }
     }
 
     void Start()
@@ -22,8 +35,25 @@ public class GameStateManager : MonoBehaviour
     }
 
 
-    void Update()
+    public static void PlaySFX(string audioEffectName)
     {
-        
+        if (audioEffectName == "cheeseBite")
+        {
+            instance.effectAudioSource.PlayOneShot(instance.cheeseBite);
+        } else if (audioEffectName == "gameOver")
+        {
+            instance.effectAudioSource.PlayOneShot(instance.gameOver);
+        }
+    }
+
+    public static int[] GetUnlockedLevels()
+    {
+        return unlockedLevels;
+    }
+
+    public static void UnlockLevel(int levelIndex)
+    {
+        // level 1 is at index 0
+        unlockedLevels[levelIndex-2] = 1;
     }
 }
