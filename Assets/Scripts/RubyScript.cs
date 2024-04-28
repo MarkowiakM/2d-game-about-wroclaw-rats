@@ -18,6 +18,8 @@ public class RubyScript : MonoBehaviour
 
     private Animator playerAnimation;
 
+    private GameStateManager GameStateManager;
+
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
@@ -62,6 +64,7 @@ public class RubyScript : MonoBehaviour
         {
             if (other.gameObject.CompareTag("RubbyCheese"))
             {
+                GameStateManager.PlaySFX("cheeseBite");
                 Destroy(other.gameObject);
                 lm.rubyCoins++;
             }

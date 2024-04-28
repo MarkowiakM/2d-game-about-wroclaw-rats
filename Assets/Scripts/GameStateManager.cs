@@ -7,8 +7,10 @@ public class GameStateManager : MonoBehaviour
     public static int doorOpenedCount;
 
     public AudioSource musicSource;
+    public AudioSource effectAudioSource;
 
     public AudioClip background;
+    public AudioClip cheeseBite;
     public static int[] unlockedLevels;
     public static GameStateManager instance;
 
@@ -32,8 +34,12 @@ public class GameStateManager : MonoBehaviour
     }
 
 
-    void Update()
+    public static void PlaySFX(string audioEffectName)
     {
+        if (audioEffectName == "cheeseBite")
+        {
+            instance.effectAudioSource.PlayOneShot(instance.cheeseBite);
+        }
     }
 
     public static int[] GetUnlockedLevels()

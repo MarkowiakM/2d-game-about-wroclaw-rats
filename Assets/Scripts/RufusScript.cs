@@ -17,6 +17,7 @@ public class RufusScript : MonoBehaviour
     private bool isTouchingGround;
 
     private Animator playerAnimation;
+    private GameStateManager GameStateManager;
 
     void Start()
     {
@@ -62,6 +63,7 @@ public class RufusScript : MonoBehaviour
         {
             if (other.gameObject.CompareTag("RufusCheese"))
             {
+                GameStateManager.PlaySFX("cheeseBite");
                 Destroy(other.gameObject);
                 lm.rufusCoins++;
             }
