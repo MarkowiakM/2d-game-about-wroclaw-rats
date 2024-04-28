@@ -9,10 +9,20 @@ public class GameStateManager : MonoBehaviour
     public AudioSource musicSource;
 
     public AudioClip background;
+    public static int[] unlockedLevels;
+    public static GameStateManager instance;
 
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+            unlockedLevels = new int[]{1, 0, 0, 0, 0, 0};
+        } else
+        {
+            
+        }
     }
 
     void Start()
@@ -24,6 +34,16 @@ public class GameStateManager : MonoBehaviour
 
     void Update()
     {
-        
+    }
+
+    public static int[] GetUnlockedLevels()
+    {
+        return unlockedLevels;
+    }
+
+    public static void UnlockLevel(int levelIndex)
+    {
+        // level 1 is at index 0
+        unlockedLevels[levelIndex-2] = 1;
     }
 }

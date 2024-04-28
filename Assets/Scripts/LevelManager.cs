@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -16,10 +17,16 @@ public class LevelManager : MonoBehaviour
 
     public LevelCompletedScreen LevelCompletedScreen;
     public LevelOverScreen LevelOverScreen;
+    public int currentSceneIndex;
+
+    private GameStateManager gameStateManager;
+
 
     void Start()
     {
         Time.timeScale = 1f;
+        Scene currentScene = SceneManager.GetActiveScene();
+        currentSceneIndex = currentScene.buildIndex;
     }
 
     void Update()
@@ -36,6 +43,14 @@ public class LevelManager : MonoBehaviour
         else if(rubyDoorOpened && rufusDoorOpened && !isLevelCompleted)
         {
             isLevelCompleted = true;
+            Scene currentScene = SceneManager.GetActiveScene();
+            currentSceneIndex = currentScene.buildIndex;
+            // if level1 is completed then it passes index 2 etc.
+            if (currentSceneIndex != 7) 
+            {
+                GameStateManager.UnlockLevel(currentSceneIndex+1);
+            }
+            SavePlayer();
             StartCoroutine(DelayedLevelCompleted(1.5f));
         }
         timeElapsed += Time.deltaTime;
@@ -63,4 +78,8 @@ public class LevelManager : MonoBehaviour
         LevelOverScreen.Setup();
     }
 
+    private void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this, GameStateManager.GetUnlockedLevels());
+    }
 }
