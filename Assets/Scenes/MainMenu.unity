@@ -667,6 +667,7 @@ MonoBehaviour:
   effectAudioSource: {fileID: 1341644915}
   background: {fileID: 8300000, guid: 60729e8b4047b2647a4f790fd47a89d7, type: 3}
   cheeseBite: {fileID: 8300000, guid: 067fc2c98003a1e4bb058d46bc822325, type: 3}
+  gameOver: {fileID: 8300000, guid: db321ad7b9e7b2741acea2b31599eb6d, type: 3}
 --- !u!114 &577818223
 MonoBehaviour:
   m_ObjectHideFlags: 0

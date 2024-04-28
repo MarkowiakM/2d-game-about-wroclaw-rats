@@ -70,6 +70,7 @@ public class RubyScript : MonoBehaviour
             }
             if (other.gameObject.CompareTag("RufusWater") || other.gameObject.CompareTag("Enemy"))
             {
+                GameStateManager.PlaySFX("gameOver");
                 playerAnimation.SetTrigger("Death");
                 lm.isRubyDead = true;
             }

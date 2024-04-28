@@ -69,6 +69,7 @@ public class RufusScript : MonoBehaviour
             }
             if (other.gameObject.CompareTag("RubyWater") || other.gameObject.CompareTag("Enemy"))
             {
+                GameStateManager.PlaySFX("gameOver");
                 playerAnimation.SetTrigger("Death");
                 lm.isRufusDead = true;
             }

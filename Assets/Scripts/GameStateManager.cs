@@ -11,6 +11,7 @@ public class GameStateManager : MonoBehaviour
 
     public AudioClip background;
     public AudioClip cheeseBite;
+    public AudioClip gameOver;
     public static int[] unlockedLevels;
     public static GameStateManager instance;
 
@@ -39,6 +40,9 @@ public class GameStateManager : MonoBehaviour
         if (audioEffectName == "cheeseBite")
         {
             instance.effectAudioSource.PlayOneShot(instance.cheeseBite);
+        } else if (audioEffectName == "gameOver")
+        {
+            instance.effectAudioSource.PlayOneShot(instance.gameOver);
         }
     }
 
