@@ -8,18 +8,19 @@ public class Portal : MonoBehaviour
     public Portal destinationPortal;
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Rufus") || other.CompareTag("Ruby"))
         {
-            Debug.Log("teleporting");
-            Teleport(other.gameObject);
+            if(Vector2.Distance(other.transform.position, transform.position) > 0.3f)
+            {
+                Teleport(other.gameObject);
+            }
         }
     }
 
     private void Teleport(GameObject player)
     {
         player.transform.position = destinationPortal.transform.position;
-        player.transform.rotation = destinationPortal.transform.rotation;
     }
 }
