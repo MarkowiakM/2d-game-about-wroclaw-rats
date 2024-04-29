@@ -6565,7 +6565,7 @@ MonoBehaviour:
   isRufusDead: 0
   rubyDoorOpened: 0
   rufusDoorOpened: 0
-  timeElapsed: 0
+  timeLeft: 120
   LevelCompletedScreen: {fileID: 292262524}
   LevelOverScreen: {fileID: 349172994}
 --- !u!4 &2015094981

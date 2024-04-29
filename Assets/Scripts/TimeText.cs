@@ -13,7 +13,10 @@ public class TimeText : MonoBehaviour
 
     void Update()
     {
-        timeText.text = FormatTime(lm.timeElapsed);
+        if(lm.timeLeft >= 0)
+        {
+            timeText.text = FormatTime(lm.timeLeft);
+        }
 
     }
 
