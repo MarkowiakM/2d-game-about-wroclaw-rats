@@ -705,6 +705,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RubyDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 6198514275742193167, guid: 1760f2ff13ec1eb4dad9c2ad025c54ee, type: 3}
+      propertyPath: lm
+      value: 
+      objectReference: {fileID: 1951346215}
     - target: {fileID: 7175785636317805032, guid: 1760f2ff13ec1eb4dad9c2ad025c54ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.1773024
@@ -7006,6 +7010,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8399064756547510964, guid: e15d05721e162054589d41448d953200, type: 3}
+      propertyPath: lm
+      value: 
+      objectReference: {fileID: 1951346215}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
