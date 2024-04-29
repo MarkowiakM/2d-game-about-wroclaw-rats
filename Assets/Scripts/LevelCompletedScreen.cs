@@ -26,4 +26,9 @@ public class LevelCompletedScreen : MonoBehaviour
         int seconds = Mathf.FloorToInt(timeInSeconds % 60);
         return string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+
+    public void Close()
+    {
+        gameObject.SetActive(false);
+    }
 }
