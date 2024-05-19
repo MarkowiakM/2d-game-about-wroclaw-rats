@@ -916,11 +916,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3374348716091844528, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
       propertyPath: m_Name
-      value: WalktroughButton
+      value: TutorialButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 577818223}
+    - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToTutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NavigationManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4904259206014340962, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8666487937440050443, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
       propertyPath: m_text
-      value: Walkthrough
+      value: Tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 8666487937440050443, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
       propertyPath: m_margin.x
