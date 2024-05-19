@@ -86,4 +86,10 @@ public class LevelManager : MonoBehaviour
     {
         SaveSystem.SavePlayer(this, GameStateManager.GetUnlockedLevels());
     }
+
+    public void LoadMaze()
+    {
+        SceneManager.LoadScene(8);
+        Time.timeScale = 1f;
+    }
 }
