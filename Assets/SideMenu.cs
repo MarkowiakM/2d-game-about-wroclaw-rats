@@ -8,4 +8,9 @@ public class SideMenu : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public void Open()
+    {
+        gameObject.SetActive(true);
+    }
 }
