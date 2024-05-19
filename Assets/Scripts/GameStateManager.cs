@@ -24,7 +24,7 @@ public class GameStateManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
-            unlockedLevels = new int[]{1, 1, 1, 1, 1, 1};
+            unlockedLevels = new int[]{1, 1, 0, 0, 0, 0};
         } else
         {
             
