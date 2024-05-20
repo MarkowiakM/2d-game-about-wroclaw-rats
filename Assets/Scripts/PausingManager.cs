@@ -8,17 +8,22 @@ public class PausingManager : MonoBehaviour
     private GameStateManager gameStateManager;
     private static int isGameOn = 1;
     private static int isMusicOn = 1;
+    public GameObject pauseButton;
+    public GameObject playButton;
 
-    public void StopResumeGame() {
-        if (isGameOn == 1)
-        {
-            GameStateManager.StopResumeGame(0);
-            isGameOn = 0;
-        } else
-        {
-            GameStateManager.StopResumeGame(1);
-            isGameOn = 1;
-        }
+    public void Start()
+    {
+        pauseButton.SetActive(true);
+        playButton.SetActive(false);
+    }
+
+    public void StopResumeGame()
+    {
+        Debug.Log("is game on: " + (isGameOn == 1).ToString());
+        GameStateManager.StopResumeGame(isGameOn);
+        pauseButton.SetActive(isGameOn == 0);
+        playButton.SetActive(isGameOn == 1);
+        isGameOn = 1 - isGameOn;
     }
 
     public void StopResumeMusic() {

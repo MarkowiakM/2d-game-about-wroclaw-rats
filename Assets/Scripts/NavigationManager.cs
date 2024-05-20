@@ -60,6 +60,11 @@ public class NavigationManager : MonoBehaviour
         }
     }
 
+    public void GoToTutorial()
+    {
+        SceneManager.LoadSceneAsync(8);
+    }
+
     public void LoadState()
     {
         PlayerData data = SaveSystem.LoadPlayer();

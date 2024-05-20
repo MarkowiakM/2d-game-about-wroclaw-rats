@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - Wall
   - Key
+  - Instruction
   layers:
   - Default
   - TransparentFX
