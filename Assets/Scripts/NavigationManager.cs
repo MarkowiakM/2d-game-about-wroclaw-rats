@@ -62,7 +62,7 @@ public class NavigationManager : MonoBehaviour
 
     public void GoToTutorial()
     {
-        SceneManager.LoadSceneAsync(8);
+        SceneManager.LoadSceneAsync(9);
     }
 
     public void LoadState()
