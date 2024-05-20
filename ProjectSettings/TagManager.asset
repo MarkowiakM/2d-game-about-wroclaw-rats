@@ -13,6 +13,8 @@ TagManager:
   - RufusWater
   - RubyWater
   - Enemy
+  - Wall
+  - Key
   - Instruction
   layers:
   - Default
