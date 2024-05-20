@@ -2402,7 +2402,7 @@ PrefabInstance:
       objectReference: {fileID: 2015094982}
     - target: {fileID: 7655584235850680765, guid: b2a9a6b3ee2ab0d4a8fdcdccb0365bb8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToLevel1
+      value: GoToTutorial
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
