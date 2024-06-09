@@ -1354,6 +1354,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: NavigationManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 8666487937440050443, guid: fe10c7fdf2af62c4c9d527a193733d9b, type: 3}
+      propertyPath: m_text
+      value: start
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

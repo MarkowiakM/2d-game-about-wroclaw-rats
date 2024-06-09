@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PausingManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PausingManager : MonoBehaviour
     private static int isMusicOn = 1;
     public GameObject pauseButton;
     public GameObject playButton;
+    public GoToMenuPopup goToMenuPopup;
 
     public void Start()
     {
@@ -36,5 +38,22 @@ public class PausingManager : MonoBehaviour
             GameStateManager.PlayPasueMusic(1);
             isMusicOn = 1;
         }
+    }
+
+    public void OpenMenuPopup()
+    {
+        Time.timeScale = 0f;
+        goToMenuPopup.Open();
+    }
+
+    public void CloseMenuPopup()
+    {
+        Time.timeScale = 1f;
+        goToMenuPopup.Close();
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
     }
 }
