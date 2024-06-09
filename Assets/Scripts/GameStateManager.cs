@@ -13,6 +13,7 @@ public class GameStateManager : MonoBehaviour
     public AudioClip cheeseBite;
     public AudioClip gameOver;
     public static int[] unlockedLevels;
+    public static float[,] timeAndCoinsForLevels;
     public static GameStateManager instance;
 
     private static int isGameOn = 1;
@@ -24,7 +25,8 @@ public class GameStateManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
-            unlockedLevels = new int[]{1, 1, 0, 0, 0, 0};
+            unlockedLevels = new int[]{1, 0, 0, 0, 0, 0};
+            timeAndCoinsForLevels = new float[,]{{120f, 0}, {120f, 0}, {120f, 0}, {120f, 0}, {120f, 0}, {120f, 0}};
         } else
         {
             
@@ -58,6 +60,16 @@ public class GameStateManager : MonoBehaviour
     {
         // level 1 is at index 0
         unlockedLevels[levelIndex-2] = 1;
+    }
+
+    public static void SetLevelRatings(float[,] timeAndCoins)
+    {
+        timeAndCoinsForLevels = timeAndCoins;
+    }
+
+    public static float[,] GetTimeAndCoins()
+    {
+        return timeAndCoinsForLevels;
     }
 
     public static void StopResumeGame(int isGameOn) {
