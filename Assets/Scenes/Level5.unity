@@ -6701,6 +6701,7 @@ MonoBehaviour:
   LevelCompletedScreen: {fileID: 1639850021}
   LevelOverScreen: {fileID: 723697801}
   currentSceneIndex: 0
+  timeForLevel: 0
 --- !u!4 &1951346216
 Transform:
   m_ObjectHideFlags: 0
@@ -6775,7 +6776,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 71b4fd54d181175459694854d223cfda, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -950,11 +950,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1269067069105637387, guid: c41265853f261034e9b2af3fac5b9c3c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -910.5436
+      value: -909.85
       objectReference: {fileID: 0}
     - target: {fileID: 1269067069105637387, guid: c41265853f261034e9b2af3fac5b9c3c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -502.39474
+      value: -502.68
       objectReference: {fileID: 0}
     - target: {fileID: 1269067069105637387, guid: c41265853f261034e9b2af3fac5b9c3c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2895,11 +2895,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1773043207137753368, guid: bbac7326b537c164bb07c57c80a53fe4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -939.1736
+      value: -938.82
       objectReference: {fileID: 0}
     - target: {fileID: 1773043207137753368, guid: bbac7326b537c164bb07c57c80a53fe4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -511.91473
+      value: -509.05
       objectReference: {fileID: 0}
     - target: {fileID: 1773043207137753368, guid: bbac7326b537c164bb07c57c80a53fe4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10795,6 +10795,7 @@ MonoBehaviour:
   LevelCompletedScreen: {fileID: 292262524}
   LevelOverScreen: {fileID: 349172994}
   currentSceneIndex: 0
+  timeForLevel: 0
 --- !u!4 &2015094981
 Transform:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ public class GameStateManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
-            unlockedLevels = new int[]{1, 0, 0, 0, 0, 0};
+            unlockedLevels = new int[]{1, 1, 1, 1, 1, 1};
             timeAndCoinsForLevels = new float[,]{{120f, 0}, {120f, 0}, {120f, 0}, {120f, 0}, {120f, 0}, {120f, 0}};
             starsForLevels = new int[]{0, 0, 0, 0, 0, 0};
             musicSource.clip = background;
