@@ -13,10 +13,14 @@ public class GameStateManager : MonoBehaviour
     public AudioClip cheeseBite;
     public AudioClip gameOver;
     public static int[] unlockedLevels;
+    public static float[,] timeAndCoinsForLevels;
+
+    public static int[] starsForLevels;
     public static GameStateManager instance;
 
     private static int isGameOn = 1;
     private static int isMusicOn = 1;
+    
 
     void Awake()
     {
@@ -24,7 +28,11 @@ public class GameStateManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
-            unlockedLevels = new int[]{1, 1, 0, 0, 0, 0};
+            unlockedLevels = new int[]{1, 0, 0, 0, 0, 0};
+            timeAndCoinsForLevels = new float[,]{{120f, 0}, {120f, 0}, {120f, 0}, {120f, 0}, {120f, 0}, {120f, 0}};
+            starsForLevels = new int[]{0, 0, 0, 0, 0, 0};
+            musicSource.clip = background;
+            musicSource.Play();
         } else
         {
             
@@ -33,8 +41,7 @@ public class GameStateManager : MonoBehaviour
 
     void Start()
     {
-        musicSource.clip = background;
-        musicSource.Play();
+        
     }
 
 
@@ -60,6 +67,21 @@ public class GameStateManager : MonoBehaviour
         unlockedLevels[levelIndex-2] = 1;
     }
 
+    public static void SetLevelRatings(float[,] timeAndCoins)
+    {
+        timeAndCoinsForLevels = timeAndCoins;
+        for (int i = 0; i < timeAndCoins.GetLength(0); i++)
+        {
+            starsForLevels[i] = GetStarsForLevel(timeAndCoins[i, 0], (int)timeAndCoins[i, 1]);
+            Debug.Log("Level " + i + " stars: " + starsForLevels[i]);
+        }
+    }
+
+    public static float[,] GetTimeAndCoins()
+    {
+        return timeAndCoinsForLevels;
+    }
+
     public static void StopResumeGame(int isGameOn) {
         if (isGameOn == 1)
         {
@@ -82,6 +104,45 @@ public class GameStateManager : MonoBehaviour
         {
             instance.musicSource.Play();
             instance.effectAudioSource.mute = false;
+        }
+    }
+
+    private static int GetStarsForLevel(float timeForLevel, int collectedCheeses)
+    {
+        int timeStars = 1;
+        if (timeForLevel < 40)
+        {
+            timeStars = 3;
+        }
+        else if (timeForLevel < 80)
+        {
+            timeStars = 2;
+        }
+
+        int cheeseStars = 1;
+        if (collectedCheeses >= 8)
+        {
+            cheeseStars = 3;
+        }
+        else if (collectedCheeses >= 4)
+        {
+            cheeseStars = 2;
+        }
+
+        int totalStars = timeStars + cheeseStars;
+
+        // Mapowanie na 1-3 gwiazdek
+        if (totalStars <= 3)
+        {
+            return 1;
+        }
+        else if (totalStars == 4)
+        {
+            return 2;
+        }
+        else
+        {
+            return 3;
         }
     }
 }

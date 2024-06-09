@@ -19,6 +19,9 @@ public class LevelManager : MonoBehaviour
     public LevelOverScreen LevelOverScreen;
     public int currentSceneIndex;
 
+    public float[,] timeAndCoins;
+    public float timeForLevel;
+
     private GameStateManager gameStateManager;
 
 
@@ -50,6 +53,7 @@ public class LevelManager : MonoBehaviour
             {
                 GameStateManager.UnlockLevel(currentSceneIndex+1);
             }
+            GameStateManager.SetLevelRatings(GetTimeAndCoins());
             SavePlayer();
             StartCoroutine(DelayedLevelCompleted(1.5f));
         } else
@@ -84,7 +88,24 @@ public class LevelManager : MonoBehaviour
 
     private void SavePlayer()
     {
-        SaveSystem.SavePlayer(this, GameStateManager.GetUnlockedLevels());
+        SaveSystem.SavePlayer(this, GameStateManager.GetUnlockedLevels(), GameStateManager.GetTimeAndCoins());
+    }
+
+    private float[,] GetTimeAndCoins()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        currentSceneIndex = currentScene.buildIndex;
+        timeForLevel = 120f - timeLeft;
+        timeAndCoins = GameStateManager.GetTimeAndCoins();
+        if (timeAndCoins[currentSceneIndex-2, 0] > timeForLevel)
+        {
+            timeAndCoins[currentSceneIndex-2, 0] = timeForLevel;
+        }
+        if (timeAndCoins[currentSceneIndex-2, 1] < rufusCoins + rubyCoins)
+        {
+            timeAndCoins[currentSceneIndex-2, 1] = rufusCoins + rubyCoins;
+        }
+        return timeAndCoins;
     }
 
     public void LoadMaze()

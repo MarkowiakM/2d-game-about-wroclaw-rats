@@ -69,6 +69,7 @@ public class NavigationManager : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
         Debug.Log("loaded state: "+ data.unlockedLevelsToSave[0] + " " + data.unlockedLevelsToSave[1] + " " + data.unlockedLevelsToSave[2] + " " + data.unlockedLevelsToSave[3] + " " + data.unlockedLevelsToSave[4] + " " + data.unlockedLevelsToSave[5]);
+        Debug.Log("loaded times and coins: " + data.timeAndCoinsToSave[0, 0] + " " + data.timeAndCoinsToSave[0, 1] + " " + data.timeAndCoinsToSave[1, 0] + " " + data.timeAndCoinsToSave[1, 1] + " " + data.timeAndCoinsToSave[2, 0] + " " + data.timeAndCoinsToSave[2, 1] + " " + data.timeAndCoinsToSave[3, 0] + " " + data.timeAndCoinsToSave[3, 1] + " " + data.timeAndCoinsToSave[4, 0] + " " + data.timeAndCoinsToSave[4, 1] + " " + data.timeAndCoinsToSave[5, 0] + " " + data.timeAndCoinsToSave[5, 1]);
         for (int i = 0; i < data.unlockedLevelsToSave.Length; i++)
         {
             if (data.unlockedLevelsToSave[i] == 1)
@@ -76,5 +77,6 @@ public class NavigationManager : MonoBehaviour
                 GameStateManager.UnlockLevel(i+2);
             }
         }
+        GameStateManager.SetLevelRatings(data.timeAndCoinsToSave);
     }
 }
