@@ -6,9 +6,9 @@ using TMPro;
 
 public class Level : MonoBehaviour
 {
+
     public GameObject playButton;
     public int levelNr;
-
     public TextMeshProUGUI levelText;
 
     void Start()
