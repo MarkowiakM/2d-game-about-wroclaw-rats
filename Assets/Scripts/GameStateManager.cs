@@ -108,41 +108,56 @@ public class GameStateManager : MonoBehaviour
     }
 
     private static int GetStarsForLevel(float timeForLevel, int collectedCheeses)
+{
+    // Jeżeli użytkownik nie zebrał żadnych serków lub czas jest równy lub większy 120, zwracamy 0 gwiazdek
+    if (collectedCheeses == 0 || timeForLevel >= 120)
     {
-        int timeStars = 1;
-        if (timeForLevel < 40)
-        {
-            timeStars = 3;
-        }
-        else if (timeForLevel < 80)
-        {
-            timeStars = 2;
-        }
-
-        int cheeseStars = 1;
-        if (collectedCheeses >= 8)
-        {
-            cheeseStars = 3;
-        }
-        else if (collectedCheeses >= 4)
-        {
-            cheeseStars = 2;
-        }
-
-        int totalStars = timeStars + cheeseStars;
-
-        // Mapowanie na 1-3 gwiazdek
-        if (totalStars <= 3)
-        {
-            return 1;
-        }
-        else if (totalStars == 4)
-        {
-            return 2;
-        }
-        else
-        {
-            return 3;
-        }
+        return 0;
     }
+
+    int timeStars = 0; // Początkowa liczba gwiazdek ustawiona na zero
+    if (timeForLevel < 40)
+    {
+        timeStars = 3;
+    }
+    else if (timeForLevel < 80)
+    {
+        timeStars = 2;
+    }
+    else
+    {
+        timeStars = 1;
+    }
+
+    int cheeseStars = 0; // Początkowa liczba gwiazdek ustawiona na zero
+    if (collectedCheeses >= 8)
+    {
+        cheeseStars = 3;
+    }
+    else if (collectedCheeses >= 4)
+    {
+        cheeseStars = 2;
+    }
+    else
+    {
+        cheeseStars = 1;
+    }
+
+    int totalStars = timeStars + cheeseStars;
+
+    // Mapowanie na 1-3 gwiazdek
+    if (totalStars <= 3)
+    {
+        return 1;
+    }
+    else if (totalStars == 4)
+    {
+        return 2;
+    }
+    else
+    {
+        return 3;
+    }
+}
+
 }
